@@ -7,17 +7,17 @@ import Image from "next/image";
 import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
 const Home: React.FC = () => {
-  const [fix, setFix] = useState(false);
+  // const [fix, setFix] = useState(false);
 
-  function setFixed() {
-    if (window.screenY >= 0) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  }
+  // function setFixed() {
+  //   if (window.screenY >= 0) {
+  //     setFix(true);
+  //   } else {
+  //     setFix(false);
+  //   }
+  // }
 
-  window.addEventListener("scroll", setFixed);
+  // window.addEventListener("scroll", setFixed);
   return (
     <>
       <Grid
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
               height={"8%"}
               position={"relative"}
               overflow={"hidden"}
-              className={fix ? "fixed" : "not-fixed"}
+              // className={fix ? "fixed" : "not-fixed"}
             >
               <Grid
                 container
