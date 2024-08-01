@@ -31,3 +31,23 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: test;
+  src: url(../assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: hover;
+  src: url(../assets/fonts/Varela_Round/VarelaRound-Regular.ttf);
+}
+
+.testfont{
+  font-family: test;
+}
+.hover{
+  font-family: test;
+}
+.fixed{
+   position: fixed;
+}
+
