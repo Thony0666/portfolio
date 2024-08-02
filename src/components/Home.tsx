@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/banier.jpg";
 import logo from "../assets/images/logo.png";
+import cv from "../assets/cv/Tafitasoa.png";
 import Image from "next/image";
 import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
@@ -86,7 +87,6 @@ const Home: React.FC = () => {
                 zIndex: isSticky ? 1000 : 1,
               }}
             >
-              
               <Grid
                 container
                 sm={5}
@@ -237,8 +237,11 @@ const Home: React.FC = () => {
                       color="secondary"
                       className="testfont"
                       endIcon={<DownloadForOffline />}
+                      component="a"
+                      href={cv.src}
+                      download="cv_anthonyo.png"
                     >
-                      Donwload cv
+                      Download CV
                     </Button>
                   </Grid>
                 </Grid>
