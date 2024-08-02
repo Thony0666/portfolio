@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/bg.jpg";
@@ -30,38 +30,28 @@ const BackGround: React.FC = () => {
         bgcolor={"white"}
         id="about"
         pt={7}
-        
+        height={"100%"}
       >
         <Grid
           container
           width={"90%"}
           mt={2}
           borderRadius={4}
-          height={"60vh"}
-          sx={{
-            backgroundImage: `url(${bannerImage2.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            // overflow: "hidden",
-          }}
+          position={"relative"}
           data-aos="fade-up"
         >
-          <Grid
-            container
-            borderRadius={4}
-            sx={{
-              backdropFilter: "blur(3px)",
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
-            }}
-          >
+          <Grid container borderRadius={4}>
             <Grid
               container
-              height={"50%"}
               position={"relative"}
               overflow={"hidden"}
               alignContent={"center"}
               justifyContent={"center"}
+              borderRadius={2}
+              sx={{
+                backgroundColor: "#0B1136",
+              }}
+              p={2}
             >
               <Typography
                 color={"white"}
@@ -84,19 +74,21 @@ const BackGround: React.FC = () => {
             </Grid>
             <Grid
               container
-              height={"92%"}
+              // height={{md:"92%"}}
               justifyContent={"space-around"}
               alignItems={"center"}
             >
               <Grid
                 minHeight={350}
                 container
-                sm={3.4}
+                sm={5.4}
+                md={3.4}
                 justifyContent={"center"}
                 bgcolor={"white"}
                 borderRadius={3}
                 boxShadow={4}
                 p={1}
+                my={2}
                 data-aos="fade-up"
               >
                 <Grid container justifyContent={"center"}>
@@ -137,15 +129,66 @@ const BackGround: React.FC = () => {
                   </Typography>
                 </Grid>
               </Grid>
+
               <Grid
                 container
-                sm={3.4}
+                sm={5.4}
+                md={3.4}
                 minHeight={350}
                 justifyContent={"center"}
                 bgcolor={"white"}
                 borderRadius={3}
                 boxShadow={4}
                 p={1}
+                my={2}
+                data-aos="fade-up"
+              >
+                <Grid container justifyContent={"center"}>
+                  <Translate fontSize="large" style={{ color: purple[500] }} />
+                </Grid>
+                <Typography
+                  variant="h5"
+                  color={purple[500]}
+                  fontWeight={"bold"}
+                  className="testfont"
+                >
+                  Language Skills
+                </Typography>
+                <Grid container p={2}>
+                  <Typography
+                    variant="body1"
+                    fontWeight={"bold"}
+                    className="testfont"
+                  >
+                    . Malagasy :
+                    <span style={{ fontWeight: "lighter" }}>
+                      Fluent in both written and spoken forms, enabling
+                      effective communication in Malagasy-speaking regions.
+                    </span>
+                    <br />. French :
+                    <span style={{ fontWeight: "lighter" }}>
+                      Proficient at 45%, able to participate in conversations
+                      and written communications.
+                    </span>{" "}
+                    <br />. English :
+                    <span style={{ fontWeight: "lighter" }}>
+                      Basic proficiency at 10%, with a focus on improving skills
+                      for global communication.
+                    </span>
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                sm={12}
+                md={3.4}
+                // minHeight={350}
+                justifyContent={"center"}
+                bgcolor={"white"}
+                borderRadius={3}
+                boxShadow={4}
+                p={1}
+                my={{md:2}}
                 data-aos="fade-up"
               >
                 <Grid container justifyContent={"center"}>
@@ -180,52 +223,6 @@ const BackGround: React.FC = () => {
                     design. My coursework includes algorithms, data structures,
                     and database management, preparing me for a future in
                     software development and technology.
-                  </Typography>
-                </Grid>
-              </Grid>
-              <Grid
-                container
-                sm={3.4}
-                minHeight={350}
-                justifyContent={"center"}
-                bgcolor={"white"}
-                borderRadius={3}
-                boxShadow={4}
-                p={1}
-                data-aos="fade-up"
-              >
-                <Grid container justifyContent={"center"}>
-                  <Translate fontSize="large" style={{ color: purple[500] }} />
-                </Grid>
-                <Typography
-                  variant="h5"
-                  color={purple[500]}
-                  fontWeight={"bold"}
-                  className="testfont"
-                >
-                  BLanguage Skills
-                </Typography>
-                <Grid container p={2}>
-                  <Typography
-                    variant="body1"
-                    fontWeight={"bold"}
-                    className="testfont"
-                  >
-                    . Malagasy :
-                    <span style={{ fontWeight: "lighter" }}>
-                      Fluent in both written and spoken forms, enabling
-                      effective communication in Malagasy-speaking regions.
-                    </span>
-                    <br />. French :
-                    <span style={{ fontWeight: "lighter" }}>
-                      Proficient at 45%, able to participate in conversations
-                      and written communications.
-                    </span>{" "}
-                    <br />. English :
-                    <span style={{ fontWeight: "lighter" }}>
-                      Basic proficiency at 10%, with a focus on improving skills
-                      for global communication.
-                    </span>
                   </Typography>
                 </Grid>
               </Grid>

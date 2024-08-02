@@ -57,18 +57,20 @@ function Skills() {
         bgcolor={"white"}
         id="skills"
         pt={8}
-      >
+        >
         <Typography
           color={purple[500]}
+          textAlign={'center'}
           variant="h4"
           fontWeight={"bold"}
           className="testfont"
+          data-aos="fade-up"
         >
           My key technical skills
         </Typography>
       </Grid>
       <Grid container justifyContent={"center"} pt={1.5} bgcolor={"white"}>
-        <Stack direction={"row"} justifyContent={"center"}>
+        <Stack direction={"row"} justifyContent={"center"} data-aos="fade-up">
           <Button
             variant="text"
             className="testfont"
@@ -128,11 +130,12 @@ function Skills() {
       </Grid>
       <Grid container justifyContent={"center"} bgcolor={"white"}>
         {(show === "all" || show === "spec") && (
-          <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
+          <Grid container width={"90%"} justifyContent={"space-around"} >
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -140,6 +143,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={react} alt="react js" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -158,7 +162,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -166,6 +171,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={next} alt="react js" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -184,7 +190,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -192,6 +199,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={html} alt="react js" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -210,7 +218,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -218,6 +227,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={css} alt="css" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -236,11 +246,12 @@ function Skills() {
           </Grid>
         )}
         {(show === "all" || show === "spec") && (
-          <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
+          <Grid container width={"90%"} justifyContent={"space-around"} >
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -248,6 +259,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={mui} alt="react js" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -266,7 +278,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -274,6 +287,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image
                   src={bootstrap}
@@ -297,7 +311,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -305,6 +320,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={ra} alt="react admin" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -323,7 +339,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -331,6 +348,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={js} alt="js" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -353,13 +371,13 @@ function Skills() {
             container
             width={"90%"}
             justifyContent={"space-around"}
-            mt={2}
             sx={{ display: show === "spec" ? "none" : "flex" }}
           >
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -367,6 +385,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={node} alt="node" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -385,7 +404,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -393,6 +413,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={java} alt="java" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -411,7 +432,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -419,6 +441,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={psql} alt="psql" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>
@@ -437,7 +460,8 @@ function Skills() {
             <Grid
               container
               justifyContent={"center"}
-              sm={2.5}
+              sm={5.5}
+              md={2.5}
               data-aos="fade-up"
             >
               <Grid
@@ -445,6 +469,7 @@ function Skills() {
                 borderRadius={3}
                 overflow={"hidden"}
                 sx={boxStyle}
+                my={2}
               >
                 <Image src={python} alt="python" width={300} height={300} />
                 <Grid className="overlay" sx={overlayStyle}>

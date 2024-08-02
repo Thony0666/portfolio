@@ -22,7 +22,7 @@ const Project = () => {
     });
   }, []);
   return (
-    <Box sx={{ padding: 2 }} id="project">
+    <Grid container sx={{ padding: 2 }} id="project" >
       <Grid
         container
         justifyContent={"center"}
@@ -63,7 +63,7 @@ const Project = () => {
 
       <Card sx={{ marginBottom: 2 }}>
         <CardContent>
-          <Grid container px={16} data-aos="fade-up">
+          <Grid container paddingX={{md:16}} data-aos="fade-up">
             <Typography variant="body1" className="testfont">
               The{" "}
               <Link
@@ -165,7 +165,7 @@ const Project = () => {
           </Grid>
         </CardContent>
       </Card>
-    </Box>
+    </Grid>
   );
 };
 

@@ -2,17 +2,28 @@
 import React, { useEffect, useState } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/banier.jpg";
-import logo from "../assets/images/logo.png";
+
 import cv from "../assets/cv/cvfr.png";
-import Image from "next/image";
 import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
-import Link from "next/link";
-const Home: React.FC = (props: any) => {
-  const click = props.click;
-  const color = "red";
-  const [isSticky, setIsSticky] = useState<any>(false);
+import NavbarMd from "./responsive/md/NavbarMd";
+import NavbarSm from "./responsive/sm/NavbarSm";
+import '../css/index.css'
 
+const Home: React.FC = () => {
+  const [isSticky, setIsSticky] = useState<any>(false);
+  const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setLargeurEcran(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
@@ -28,25 +39,6 @@ const Home: React.FC = (props: any) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const style = {
-    color: isSticky ? "black" : { color },
-    fontWeight: "bold",
-    textDecoration: "none",
-    position: "relative",
-    "&:hover": {
-      color: "orange",
-      fontSize: "1.2rem",
-      "&::after": {
-        content: '""',
-        position: "absolute",
-        width: "100%",
-        height: "3px",
-        backgroundColor: "orange",
-        bottom: "-3px",
-        left: 0,
-      },
-    },
-  };
   return (
     <>
       <Grid
@@ -77,92 +69,8 @@ const Home: React.FC = (props: any) => {
               backgroundColor: "rgba(0, 0, 0, 0.6)",
             }}
           >
-            <Grid
-              container
-              height={"8%"}
-              overflow={"hidden"}
-              style={{
-                transition: "all 0.5s ease",
-                justifyContent: "center",
-                position: isSticky ? "fixed" : "relative",
-                top: isSticky ? "0" : undefined,
-                width: isSticky ? "90%" : "100%",
-                background: isSticky ? "#0B1136" : "transparent",
-                zIndex: isSticky ? 1000 : 1,
-              }}
-            >
-              <Grid
-                container
-                sm={5}
-                justifyContent={"center"}
-                alignContent={"center"}
-                alignItems={"flex-end"}
-              >
-                <Image src={logo} alt="logo" width={50} height={10} />
-                <Typography
-                  variant="h5"
-                  color={"white"}
-                  className="testfont"
-                  fontWeight={"bold"}
-                  ml={2}
-                >
-                  Portfolio
-                </Typography>
-              </Grid>
-              <Grid container sm={7} justifyContent={"center"}>
-                <Stack direction={"row"} justifyContent={"center"}>
-                  <Button
-                    variant="text"
-                    className="testfont"
-                    sx={{
-                      color: "white",
-                      "&:hover": {
-                        color: purple[200],
-                      },
-                    }}
-                  >
-                    <Link href={"#home"}>Home</Link>
-                  </Button>
-                  <Button
-                    variant="text"
-                    className="testfont"
-                    sx={{
-                      color: "white",
-                      "&:hover": {
-                        color: purple[200],
-                      },
-                    }}
-                  >
-                    <Link href={"#skills"}>Skills</Link>
-                  </Button>
-                  <Button
-                    variant="text"
-                    className="testfont"
-                    sx={{
-                      color: "white",
-                      "&:hover": {
-                        color: purple[200],
-                      },
-                    }}
-                  >
-                    <Link href={"#about"}>About Me</Link>
-                  </Button>
-
-                  <Button
-                    variant="text"
-                    className="testfont"
-                    sx={{
-                      color: "white",
-                      "&:hover": {
-                        color: purple[200],
-                      },
-                    }}
-                  >
-                    <Link href={"#project"}>Project</Link>
-                  </Button>
-                </Stack>
-              </Grid>
-            </Grid>
+            {largeurEcran < 900.99 && <NavbarSm />}
+            {largeurEcran > 900.99 && <NavbarMd />}
             <Grid
               container
               height={"8%"}
@@ -207,7 +115,7 @@ const Home: React.FC = (props: any) => {
                 >
                   <Typography
                     color={"white"}
-                    variant="h3"
+                    variant='h4'
                     fontWeight={"bold"}
                     className="testfont"
                   >

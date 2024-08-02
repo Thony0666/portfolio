@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: josefin;
+    src: url(../assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+  }
+  @font-face {
+    font-family: hover;
+    src: url(../assets/fonts/Varela_Round/VarelaRound-Regular.ttf);
+  }
+  
+  .testfont{
+    font-family: josefin;
+  }
+  .hover{
+    font-family: test;
+  }
+  

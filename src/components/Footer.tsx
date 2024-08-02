@@ -1,11 +1,6 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
-import {
-  Typography,
-  Grid,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Typography, Grid, TextField, Button } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import { Facebook, GitHub, Mail, Phone } from "@mui/icons-material";
 import AOS from "aos";
@@ -27,7 +22,7 @@ const Footer = () => {
         borderRadius={"10px 10px 0 0"}
         p={2}
       >
-        <Grid container sm={4} p={2}>
+        <Grid container sm={7} md={4} p={2}>
           <Grid container>
             <Typography
               className="testfont"
@@ -48,27 +43,32 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid container mt={3}>
-            <TextField
-              variant="filled"
-              size="small"
-              color="secondary"
-              sx={{
-                borderRadius: "5px",
-                bgcolor: "white",
-              }}
-              label="Feed back"
-            />
-            <Button
-              variant="contained"
-              color="secondary"
-              size="small"
-              sx={{ ml: 2 }}
-            >
-              Send
-            </Button>
+            <Grid  xs={8}>
+              <TextField
+                variant="filled"
+                size="small"
+                color="secondary"
+                fullWidth
+                sx={{
+                  borderRadius: "5px",
+                  bgcolor: "white",
+                }}
+                label="Feed back"
+              />
+            </Grid>
+            <Grid  xs={4} pl={1}>
+              {" "}
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+              >
+                Send
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
-        <Grid container sm={3} p={2}>
+        <Grid container sm={5} md={4.5} p={2}>
           <Grid container>
             <Grid container>
               <Typography
@@ -80,25 +80,25 @@ const Footer = () => {
                 Social media
               </Typography>
             </Grid>
-            <Grid container>
+            <Grid container mt={2}>
               <Mail style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
                 tafitasoanthonyo@gmail.com
               </Typography>
             </Grid>
-            <Grid container>
+            <Grid container mt={2}>
               <GitHub style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
                 Thony0666
               </Typography>
             </Grid>
-            <Grid container>
+            <Grid container mt={2}>
               <Phone style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
                 +261 33 20 586 65
               </Typography>
             </Grid>
-            <Grid container>
+            <Grid container mt={2}>
               <Facebook style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
                 Thony 666
@@ -106,7 +106,7 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container sm={5} p={2}>
+        <Grid container sm={12} md={3.5} py={2}>
           <Grid container>
             <Typography
               className="testfont"
@@ -114,12 +114,12 @@ const Footer = () => {
               fontWeight={"bold"}
               color={"white"}
             >
-              Directly contacte
+             Appointment
             </Typography>
           </Grid>
-          <Grid container justifyContent={'space-around'}>
-            <Grid container direction={"column"} sm={5.5}>
-              <Grid>
+          <Grid container justifyContent={"space-around"}>
+            <Grid container direction={"column"} >
+              <Grid  mt={2}>
                 <TextField
                   fullWidth
                   color="secondary"
@@ -196,7 +196,7 @@ const Footer = () => {
                   color="secondary"
                   size="small"
                   fullWidth
-                  type="date"
+                  type="datetime-local"
                   InputLabelProps={{ shrink: true }}
                   sx={{
                     borderRadius: "5px",
@@ -230,8 +230,8 @@ const Footer = () => {
                 />
               </Grid>
             </Grid>
-            <Grid container sm={5.5}>
-              <Grid>
+            <Grid container xs={12}  mt={2} >
+              <Grid container>
                 <TextField
                   fullWidth
                   color="secondary"
@@ -269,8 +269,10 @@ const Footer = () => {
                   label="Description"
                 />
               </Grid>
-              <Grid >
-               <Button variant="contained" size="large" color="secondary">Send</Button>
+              <Grid container px={2} pt={2} justifyContent={'flex-end'}>
+                <Button variant="contained" size="large" color="secondary">
+                  Send
+                </Button>
               </Grid>
             </Grid>
           </Grid>
