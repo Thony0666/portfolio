@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import {
   Box,
   Typography,
@@ -11,11 +12,18 @@ import {
 } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Project = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <Box sx={{ padding: 2 }}>
-      <Grid container justifyContent={"center"} bgcolor={"white"}>
+      <Grid container justifyContent={"center"} bgcolor={"white"} data-aos="fade-up">
         <Typography
           color={purple[500]}
           variant="h4"
@@ -25,7 +33,7 @@ const Project = () => {
           Project
         </Typography>
       </Grid>
-      <Grid container justifyContent={"center"} pt={1.5} bgcolor={"white"}>
+      <Grid container justifyContent={"center"} pt={1.5} bgcolor={"white"} data-aos="fade-up">
         <Stack direction={"row"} justifyContent={"center"}>
           <Link href={"https://bibliotheque.tafomihaavo.mg/"} target="_blank">
             {" "}
@@ -43,7 +51,7 @@ const Project = () => {
 
       <Card sx={{ marginBottom: 2 }}>
         <CardContent>
-          <Grid container px={16}>
+          <Grid container px={16} data-aos="fade-up">
             <Typography variant="body1" className="testfont">
               The{" "}
               <Link
@@ -65,7 +73,7 @@ const Project = () => {
           </Grid>
           <Grid container mt={3} justifyContent={"center"}>
             <Grid container sm={5} justifyContent={"flex-start"}>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography
                   variant="h6"
                   className="testfont"
@@ -74,7 +82,7 @@ const Project = () => {
                   Technologies Used
                 </Typography>
               </Grid>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography variant="body2" paragraph className="testfont">
                   <span style={{ fontWeight: "bold" }}>Frontend:</span>{" "}
                   React.js, Next.js, MUI (Material-UI)
@@ -86,7 +94,7 @@ const Project = () => {
                   React-Admin, Formik
                 </Typography>
               </Grid>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography
                   variant="h6"
                   className="testfont"
@@ -95,7 +103,7 @@ const Project = () => {
                   Challenges and Solutions
                 </Typography>
               </Grid>
-              <Grid container pr={2}>
+              <Grid container pr={2} data-aos="fade-up">
                 <Typography variant="body2" paragraph className="testfont">
                   During the development of the ``Bibliothèque Numérique,`` I
                   overcame challenges like implementing user authentication and
@@ -106,7 +114,7 @@ const Project = () => {
               </Grid>
             </Grid>
             <Grid container sm={5}>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography
                   variant="h6"
                   className="testfont"
@@ -115,7 +123,7 @@ const Project = () => {
                   Key Featuresd
                 </Typography>
               </Grid>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography variant="body2" paragraph className="testfont">
                   - User Authentication and Management <br /> - Book Catalog
                   <br />
@@ -123,7 +131,7 @@ const Project = () => {
                   <br />- Admin Dashboard
                 </Typography>
               </Grid>
-              <Grid container>
+              <Grid container data-aos="fade-up">
                 <Typography
                   variant="h6"
                   className="testfont"
@@ -132,7 +140,7 @@ const Project = () => {
                   Project Impact and Future Plans
                 </Typography>
               </Grid>
-              <Grid container pr={2}>
+              <Grid container pr={2} data-aos="fade-up">
                 <Typography variant="body2" paragraph className="testfont">
                   The ``Bibliothèque Numérique`` has provided a scalable and
                   user-friendly solution for digital libraries. Moving forward,

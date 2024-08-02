@@ -1,9 +1,12 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/bg.jpg";
 import logo from "../assets/images/logo.png";
 import Image from "next/image";
 import { purple } from "@mui/material/colors";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   CheckCircleOutline,
   MenuBook,
@@ -13,6 +16,11 @@ import {
 } from "@mui/icons-material";
 
 const BackGround: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <>
       <Grid
@@ -34,6 +42,7 @@ const BackGround: React.FC = () => {
             backgroundAttachment: "fixed",
             // overflow: "hidden",
           }}
+          data-aos="fade-up"
         >
           <Grid
             container
@@ -85,6 +94,7 @@ const BackGround: React.FC = () => {
                 borderRadius={3}
                 boxShadow={4}
                 p={1}
+                data-aos="fade-up"
               >
                 <Grid container justifyContent={"center"}>
                   <CheckCircleOutline
@@ -133,6 +143,7 @@ const BackGround: React.FC = () => {
                 borderRadius={3}
                 boxShadow={4}
                 p={1}
+                data-aos="fade-up"
               >
                 <Grid container justifyContent={"center"}>
                   <MenuBook fontSize="large" style={{ color: purple[500] }} />
@@ -178,6 +189,7 @@ const BackGround: React.FC = () => {
                 borderRadius={3}
                 boxShadow={4}
                 p={1}
+                data-aos="fade-up"
               >
                 <Grid container justifyContent={"center"}>
                   <Translate fontSize="large" style={{ color: purple[500] }} />

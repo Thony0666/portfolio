@@ -1,22 +1,24 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import {
-  Box,
-  Container,
   Typography,
-  Link,
   Grid,
   TextField,
   Button,
 } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailIcon from "@mui/icons-material/Email";
-import { blue, purple } from "@mui/material/colors";
+import { purple } from "@mui/material/colors";
 import { Facebook, GitHub, Mail, Phone } from "@mui/icons-material";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
-    <Grid container justifyContent={"center"}>
+    <Grid container justifyContent={"center"} data-aos="fade-up">
       <Grid
         container
         width={"90%"}

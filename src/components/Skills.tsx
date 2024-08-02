@@ -1,7 +1,8 @@
+"use client";
 import { Button, Grid, Rating, Stack, Typography } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import react from "../assets/images/reactjs.png";
 import next from "../assets/images/nextjs.png";
 import node from "../assets/images/nodejs.png";
@@ -14,8 +15,15 @@ import bootstrap from "../assets/images/bootstrap.png";
 import java from "../assets/images/java.png";
 import psql from "../assets/images/postgres.jpg";
 import python from "../assets/images/python.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Skills() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   const boxStyle = {
     position: "relative",
     boxShadow: 10,
@@ -94,7 +102,7 @@ function Skills() {
       </Grid>
       <Grid container justifyContent={"center"} bgcolor={"white"}>
         <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -115,7 +123,7 @@ function Skills() {
               <Rating name="read-only" value={5} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -136,7 +144,7 @@ function Skills() {
               <Rating name="read-only" value={5} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -157,7 +165,7 @@ function Skills() {
               <Rating name="read-only" value={5} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -180,7 +188,7 @@ function Skills() {
           </Grid>
         </Grid>
         <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -201,7 +209,7 @@ function Skills() {
               <Rating name="read-only" value={5} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -222,7 +230,7 @@ function Skills() {
               <Rating name="read-only" value={3} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -243,14 +251,14 @@ function Skills() {
               <Rating name="read-only" value={4} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
               overflow={"hidden"}
               sx={boxStyle}
             >
-              <Image src={css} alt="sccs" width={300} height={300} />
+              <Image src={node} alt="node" width={300} height={300} />
               <Grid className="overlay" sx={overlayStyle}>
                 <Typography
                   variant="h4"
@@ -258,7 +266,7 @@ function Skills() {
                   className="hover"
                   fontWeight={"bold"}
                 >
-                  SCCS js
+                  Node js
                 </Typography>
               </Grid>
               <Rating name="read-only" value={2} readOnly />
@@ -266,7 +274,7 @@ function Skills() {
           </Grid>
         </Grid>{" "}
         <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -287,7 +295,7 @@ function Skills() {
               <Rating name="read-only" value={4} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -308,7 +316,7 @@ function Skills() {
               <Rating name="read-only" value={3} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -317,7 +325,7 @@ function Skills() {
             >
               <Image src={psql} alt="psql" width={300} height={300} />
               <Grid className="overlay" sx={overlayStyle}>
-              <Typography
+                <Typography
                   variant="h4"
                   color={"white"}
                   className="hover"
@@ -326,14 +334,10 @@ function Skills() {
                   React js
                 </Typography>
               </Grid>
-              <Rating
-                name="read-only"
-                value={4}
-                readOnly
-              />
+              <Rating name="read-only" value={4} readOnly />
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5}>
+          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}
               borderRadius={3}
@@ -342,7 +346,7 @@ function Skills() {
             >
               <Image src={python} alt="python" width={300} height={300} />
               <Grid className="overlay" sx={overlayStyle}>
-              <Typography
+                <Typography
                   variant="h4"
                   color={"white"}
                   className="hover"
@@ -351,11 +355,7 @@ function Skills() {
                   Phyton
                 </Typography>
               </Grid>
-              <Rating
-                name="read-only"
-                value={1.5}
-                readOnly
-              />
+              <Rating name="read-only" value={1.5} readOnly />
             </Grid>
           </Grid>
         </Grid>
