@@ -2,7 +2,7 @@
 import { Button, Grid, Rating, Stack, Typography } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import react from "../assets/images/reactjs.png";
 import next from "../assets/images/nextjs.png";
 import node from "../assets/images/nodejs.png";
@@ -19,6 +19,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Skills() {
+  const [show, setShow] = useState<any>("all");
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -50,7 +51,13 @@ function Skills() {
   };
   return (
     <>
-      <Grid container justifyContent={"center"} bgcolor={"white"} id="skills" pt={8} >
+      <Grid
+        container
+        justifyContent={"center"}
+        bgcolor={"white"}
+        id="skills"
+        pt={8}
+      >
         <Typography
           color={purple[500]}
           variant="h4"
@@ -66,10 +73,17 @@ function Skills() {
             variant="text"
             className="testfont"
             sx={{
-              color: purple[500],
               "&:hover": {
                 color: "black",
+                textDecoration: "underline",
+                textUnderlineOffset: "5px",
+                textDecorationThickness: "3px",
               },
+              color: show === 'all' ? purple[500] : 'black' 
+            }}
+            
+            onClick={() => {
+              setShow("all");
             }}
           >
             All
@@ -78,10 +92,16 @@ function Skills() {
             variant="text"
             className="testfont"
             sx={{
-              color: purple[400],
               "&:hover": {
                 color: "black",
+                textDecoration: "underline",
+                textUnderlineOffset: "5px",
+                textDecorationThickness: "3px",
               },
+              color: show === 'spec' ? purple[500] : 'black' 
+            }}
+            onClick={() => {
+              setShow("spec");
             }}
           >
             Speciality
@@ -90,10 +110,16 @@ function Skills() {
             variant="text"
             className="testfont"
             sx={{
-              color: purple[400],
               "&:hover": {
                 color: "black",
+                textDecoration: "underline",
+                textUnderlineOffset: "5px",
+                textDecorationThickness: "3px",
               },
+              color: show === 'other' ? purple[500] : 'black' 
+            }}
+            onClick={() => {
+              setShow("other");
             }}
           >
             Other
@@ -101,264 +127,341 @@ function Skills() {
         </Stack>
       </Grid>
       <Grid container justifyContent={"center"} bgcolor={"white"}>
-        <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
+        {(show === "all" || show === "spec") && (
+          <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
             <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
             >
-              <Image src={react} alt="react js" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  React js
-                </Typography>
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={react} alt="react js" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    React js
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={5} readOnly />
               </Grid>
-              <Rating name="read-only" value={5} readOnly />
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={next} alt="react js" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Next js
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={5} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={html} alt="react js" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    HTML
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={5} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={css} alt="css" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    CSS
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={5} readOnly />
+              </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
+        )}
+        {(show === "all" || show === "spec") && (
+          <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
             <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
             >
-              <Image src={next} alt="react js" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Next js
-                </Typography>
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={mui} alt="react js" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Material UI
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={5} readOnly />
               </Grid>
-              <Rating name="read-only" value={5} readOnly />
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image
+                  src={bootstrap}
+                  alt="bootstrap"
+                  width={300}
+                  height={300}
+                />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Bootstrap
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={3} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={ra} alt="react admin" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    React Admin
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={4} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={js} alt="js" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Javascript
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={4} readOnly />
+              </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
+        )}
+        {(show === "all" || show === "other") && (
+          <Grid
+            container
+            width={"90%"}
+            justifyContent={"space-around"}
+            mt={2}
+            sx={{ display: show === "spec" ? "none" : "flex" }}
+          >
             <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
             >
-              <Image src={html} alt="react js" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  HTML
-                </Typography>
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={node} alt="node" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Node js
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={2} readOnly />
               </Grid>
-              <Rating name="read-only" value={5} readOnly />
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={java} alt="java" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    java
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={3} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={psql} alt="psql" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    PostgresSQL
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={4} readOnly />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent={"center"}
+              sm={2.5}
+              data-aos="fade-up"
+            >
+              <Grid
+                boxShadow={10}
+                borderRadius={3}
+                overflow={"hidden"}
+                sx={boxStyle}
+              >
+                <Image src={python} alt="python" width={300} height={300} />
+                <Grid className="overlay" sx={overlayStyle}>
+                  <Typography
+                    variant="h4"
+                    color={"white"}
+                    className="hover"
+                    fontWeight={"bold"}
+                  >
+                    Phyton
+                  </Typography>
+                </Grid>
+                <Rating name="read-only" value={1.5} readOnly />
+              </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={css} alt="css" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  CSS
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={5} readOnly />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={mui} alt="react js" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Material UI
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={5} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={bootstrap} alt="bootstrap" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Bootstrap
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={3} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={ra} alt="react admin" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  React Admin
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={4} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={node} alt="node" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Node js
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={2} readOnly />
-            </Grid>
-          </Grid>
-        </Grid>{" "}
-        <Grid container width={"90%"} justifyContent={"space-around"} mt={2}>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={js} alt="javascript" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Javascript
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={4} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={java} alt="java" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  java
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={3} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={psql} alt="psql" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  PostgresSQL
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={4} readOnly />
-            </Grid>
-          </Grid>
-          <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
-            <Grid
-              boxShadow={10}
-              borderRadius={3}
-              overflow={"hidden"}
-              sx={boxStyle}
-            >
-              <Image src={python} alt="python" width={300} height={300} />
-              <Grid className="overlay" sx={overlayStyle}>
-                <Typography
-                  variant="h4"
-                  color={"white"}
-                  className="hover"
-                  fontWeight={"bold"}
-                >
-                  Phyton
-                </Typography>
-              </Grid>
-              <Rating name="read-only" value={1.5} readOnly />
-            </Grid>
-          </Grid>
-        </Grid>
+        )}
       </Grid>
     </>
   );
