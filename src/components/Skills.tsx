@@ -50,7 +50,7 @@ function Skills() {
   };
   return (
     <>
-      <Grid container justifyContent={"center"} bgcolor={"white"}>
+      <Grid container justifyContent={"center"} bgcolor={"white"} id="skills" pt={8} >
         <Typography
           color={purple[500]}
           variant="h4"
@@ -273,7 +273,7 @@ function Skills() {
             </Grid>
           </Grid>
         </Grid>{" "}
-        <Grid container width={"90%"} justifyContent={"space-around"} my={2}>
+        <Grid container width={"90%"} justifyContent={"space-around"} mt={2}>
           <Grid container justifyContent={"center"} sm={2.5} data-aos="fade-up">
             <Grid
               boxShadow={10}

@@ -28,6 +28,9 @@ const BackGround: React.FC = () => {
         minHeight={"90vh"}
         justifyContent={"center"}
         bgcolor={"white"}
+        id="about"
+        pt={7}
+        
       >
         <Grid
           container

@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/banier.jpg";
 import logo from "../assets/images/logo.png";
-import cv from "../assets/cv/Tafitasoa.png";
+import cv from "../assets/cv/cvfr.png";
 import Image from "next/image";
 import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
-const Home: React.FC = () => {
+import Link from "next/link";
+const Home: React.FC = (props: any) => {
+  const click = props.click;
   const color = "red";
   const [isSticky, setIsSticky] = useState<any>(false);
 
@@ -49,10 +51,12 @@ const Home: React.FC = () => {
     <>
       <Grid
         container
-        minHeight={"100vh"}
+        minHeight={"90vh"}
         justifyContent={"center"}
         alignContent={"center"}
         bgcolor={"white"}
+        id="home"
+        pt={6}
       >
         <Grid
           container
@@ -117,7 +121,7 @@ const Home: React.FC = () => {
                       },
                     }}
                   >
-                    Home
+                    <Link href={"#home"}>Home</Link>
                   </Button>
                   <Button
                     variant="text"
@@ -129,7 +133,7 @@ const Home: React.FC = () => {
                       },
                     }}
                   >
-                    Skills
+                    <Link href={"#skills"}>Skills</Link>
                   </Button>
                   <Button
                     variant="text"
@@ -141,7 +145,7 @@ const Home: React.FC = () => {
                       },
                     }}
                   >
-                    About Me
+                    <Link href={"#about"}>About Me</Link>
                   </Button>
 
                   <Button
@@ -154,7 +158,7 @@ const Home: React.FC = () => {
                       },
                     }}
                   >
-                    Project
+                    <Link href={"#project"}>Project</Link>
                   </Button>
                 </Stack>
               </Grid>

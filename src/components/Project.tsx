@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import {
   Box,
@@ -22,8 +22,14 @@ const Project = () => {
     });
   }, []);
   return (
-    <Box sx={{ padding: 2 }}>
-      <Grid container justifyContent={"center"} bgcolor={"white"} data-aos="fade-up">
+    <Box sx={{ padding: 2 }} id="project">
+      <Grid
+        container
+        justifyContent={"center"}
+        bgcolor={"white"}
+        data-aos="fade-up"
+        pt={7}
+      >
         <Typography
           color={purple[500]}
           variant="h4"
@@ -33,7 +39,13 @@ const Project = () => {
           Project
         </Typography>
       </Grid>
-      <Grid container justifyContent={"center"} pt={1.5} bgcolor={"white"} data-aos="fade-up">
+      <Grid
+        container
+        justifyContent={"center"}
+        pt={1.5}
+        bgcolor={"white"}
+        data-aos="fade-up"
+      >
         <Stack direction={"row"} justifyContent={"center"}>
           <Link href={"https://bibliotheque.tafomihaavo.mg/"} target="_blank">
             {" "}
