@@ -331,7 +331,7 @@ function Skills() {
                   className="hover"
                   fontWeight={"bold"}
                 >
-                  React js
+                  PostgresSQL
                 </Typography>
               </Grid>
               <Rating name="read-only" value={4} readOnly />
