@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import bannerImage2 from "../assets/images/banier.jpg";
 import logo from "../assets/images/logo.png";
@@ -7,17 +7,43 @@ import Image from "next/image";
 import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
 const Home: React.FC = () => {
-  // const [fix, setFix] = useState(false);
+  const color = "red";
+  const [isSticky, setIsSticky] = useState<any>(false);
 
-  // function setFixed() {
-  //   if (window.screenY >= 0) {
-  //     setFix(true);
-  //   } else {
-  //     setFix(false);
-  //   }
-  // }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setIsSticky(true);
+      }
+      if (window.scrollY < 29) {
+        setIsSticky(false);
+      }
+    };
 
-  // window.addEventListener("scroll", setFixed);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const style = {
+    color: isSticky ? "black" : { color },
+    fontWeight: "bold",
+    textDecoration: "none",
+    position: "relative",
+    "&:hover": {
+      color: "orange",
+      fontSize: "1.2rem",
+      "&::after": {
+        content: '""',
+        position: "absolute",
+        width: "100%",
+        height: "3px",
+        backgroundColor: "orange",
+        bottom: "-3px",
+        left: 0,
+      },
+    },
+  };
   return (
     <>
       <Grid
@@ -49,10 +75,18 @@ const Home: React.FC = () => {
             <Grid
               container
               height={"8%"}
-              position={"relative"}
               overflow={"hidden"}
-              // className={fix ? "fixed" : "not-fixed"}
+              style={{
+                transition: "all 0.5s ease",
+                justifyContent: "center",
+                position: isSticky ? "fixed" : "relative",
+                top: isSticky ? "0" : undefined,
+                width: isSticky ? "90%" : "100%",
+                background: isSticky ? "#0B1136" : "transparent",
+                zIndex: isSticky ? 1000 : 1,
+              }}
             >
+              
               <Grid
                 container
                 sm={5}
@@ -79,7 +113,7 @@ const Home: React.FC = () => {
                     sx={{
                       color: "white",
                       "&:hover": {
-                        color: purple[500],
+                        color: purple[200],
                       },
                     }}
                   >
@@ -91,7 +125,7 @@ const Home: React.FC = () => {
                     sx={{
                       color: "white",
                       "&:hover": {
-                        color: purple[500],
+                        color: purple[200],
                       },
                     }}
                   >
@@ -103,7 +137,7 @@ const Home: React.FC = () => {
                     sx={{
                       color: "white",
                       "&:hover": {
-                        color: purple[500],
+                        color: purple[200],
                       },
                     }}
                   >
@@ -116,7 +150,7 @@ const Home: React.FC = () => {
                     sx={{
                       color: "white",
                       "&:hover": {
-                        color: purple[500],
+                        color: purple[200],
                       },
                     }}
                   >
@@ -125,6 +159,20 @@ const Home: React.FC = () => {
                 </Stack>
               </Grid>
             </Grid>
+            <Grid
+              container
+              height={"8%"}
+              overflow={"hidden"}
+              style={{
+                transition: "all 0.5s ease",
+                justifyContent: "center",
+                position: isSticky ? "relative" : "fixed",
+                top: isSticky ? "0" : undefined,
+                background: isSticky ? "transparent" : "transparent",
+                zIndex: isSticky ? 0 : 0,
+                width: isSticky ? "90%" : "100%",
+              }}
+            ></Grid>
             <Grid
               container
               height={"92%"}
