@@ -17,6 +17,7 @@ import psql from "../assets/images/postgres.jpg";
 import python from "../assets/images/python.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../css/index.css";
 
 function Skills() {
   const [show, setShow] = useState<any>("all");
@@ -150,7 +151,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     React js
@@ -178,7 +179,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Next js
@@ -206,7 +207,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     HTML
@@ -234,7 +235,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     CSS
@@ -266,7 +267,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Material UI
@@ -299,7 +300,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Bootstrap
@@ -327,7 +328,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     React Admin
@@ -355,7 +356,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Javascript
@@ -392,7 +393,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Node js
@@ -420,7 +421,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     java
@@ -448,7 +449,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     PostgresSQL
@@ -476,7 +477,7 @@ function Skills() {
                   <Typography
                     variant="h4"
                     color={"white"}
-                    className="hover"
+                    className="testfont"
                     fontWeight={"bold"}
                   >
                     Phyton

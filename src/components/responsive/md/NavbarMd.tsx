@@ -3,7 +3,7 @@ import { purple } from "@mui/material/colors";
 import Image from "next/image";
 import logo from "../../../assets/images/logo.png";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useWindowScroll } from 'react-use';
 
 function NavbarMd() {

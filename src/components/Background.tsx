@@ -1,17 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
-import { Button, Grid, Stack, Typography } from "@mui/material";
-import bannerImage2 from "../assets/images/bg.jpg";
-import logo from "../assets/images/logo.png";
-import Image from "next/image";
+import {  Grid, Typography } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
   CheckCircleOutline,
   MenuBook,
-  PlaylistAddCheck,
-  Start,
   Translate,
 } from "@mui/icons-material";
 

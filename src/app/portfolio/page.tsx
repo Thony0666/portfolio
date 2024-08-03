@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import Home from "@/components/Home";
 import Skills from "@/components/Skills";
 import BackGround from "@/components/Background";
