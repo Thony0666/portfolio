@@ -1,29 +1,14 @@
-import { Button, Grid, Stack, Typography } from "@mui/material";
-import { purple } from "@mui/material/colors";
+import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import logo from "../../../assets/images/logo.png";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ButtonDrawer from "@/components/Drawer";
+import { useWindowScroll } from 'react-use';
 
 function NavbarSm() {
-  const [isSticky, setIsSticky] = useState<any>(false);
+  const { y } = useWindowScroll();
+  const isSticky = y > 30;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsSticky(true);
-      }
-      if (window.scrollY < 29) {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
       <Grid
@@ -52,7 +37,7 @@ function NavbarSm() {
             Portfolio
           </Typography>
         </Grid>
-        <Grid container xs={3}  justifyContent={'flex-end'}>
+        <Grid container xs={3} justifyContent={"flex-end"}>
           <ButtonDrawer />
         </Grid>
       </Grid>

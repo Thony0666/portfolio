@@ -4,25 +4,11 @@ import Image from "next/image";
 import logo from "../../../assets/images/logo.png";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useWindowScroll } from 'react-use';
 
 function NavbarMd() {
-  const [isSticky, setIsSticky] = useState<any>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsSticky(true);
-      }
-      if (window.scrollY < 29) {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const { y } = useWindowScroll();
+  const isSticky = y > 30;
   return (
     <>
       <Grid

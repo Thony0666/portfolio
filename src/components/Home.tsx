@@ -8,36 +8,26 @@ import { DownloadForOffline } from "@mui/icons-material";
 import { purple } from "@mui/material/colors";
 import NavbarMd from "./responsive/md/NavbarMd";
 import NavbarSm from "./responsive/sm/NavbarSm";
-import '../css/index.css'
+import "../css/index.css";
+import { useWindowScroll } from 'react-use';
 
 const Home: React.FC = () => {
-  const [isSticky, setIsSticky] = useState<any>(false);
-  const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
+  const [largeurEcran, setLargeurEcran] = useState(0);
+  const { y: scrollY } = useWindowScroll();
+  const isSticky = scrollY > 30;
+
   useEffect(() => {
-    const handleResize = () => {
-      setLargeurEcran(window.innerWidth);
-    };
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setLargeurEcran(window.innerWidth);
+      };
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsSticky(true);
-      }
-      if (window.scrollY < 29) {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
   return (
     <>
@@ -115,7 +105,7 @@ const Home: React.FC = () => {
                 >
                   <Typography
                     color={"white"}
-                    variant='h4'
+                    variant="h4"
                     fontWeight={"bold"}
                     className="testfont"
                   >

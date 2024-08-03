@@ -1,14 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
 import {
-  Box,
   Typography,
   Card,
   CardContent,
   CardMedia,
   Grid,
   Stack,
-  Button,
 } from "@mui/material";
 import { purple } from "@mui/material/colors";
 import Link from "next/link";
