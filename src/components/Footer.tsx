@@ -5,6 +5,7 @@ import { purple } from "@mui/material/colors";
 import { Facebook, GitHub, Mail, Phone } from "@mui/icons-material";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const Footer = () => {
   useEffect(() => {
@@ -43,7 +44,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid container mt={3}>
-            <Grid  xs={8}>
+            <Grid xs={8}>
               <TextField
                 variant="filled"
                 size="small"
@@ -56,13 +57,9 @@ const Footer = () => {
                 label="Feed back"
               />
             </Grid>
-            <Grid  xs={4} pl={1}>
+            <Grid xs={4} pl={1}>
               {" "}
-              <Button
-                variant="contained"
-                color="secondary"
-                size="large"
-              >
+              <Button variant="contained" color="secondary" size="large">
                 Send
               </Button>
             </Grid>
@@ -89,7 +86,7 @@ const Footer = () => {
             <Grid container mt={2}>
               <GitHub style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
-                Thony0666
+              <Link href={"https://github.com/Thony0666"} target="_blank"> Thony0666</Link>
               </Typography>
             </Grid>
             <Grid container mt={2}>
@@ -101,7 +98,7 @@ const Footer = () => {
             <Grid container mt={2}>
               <Facebook style={{ color: "white" }} />
               <Typography className="testfont" color={"white"} pl={2}>
-                Thony 666
+                <Link href={"https://web.facebook.com/jaa.thony"} target="_blank"> Thony 666</Link>
               </Typography>
             </Grid>
           </Grid>
@@ -114,12 +111,12 @@ const Footer = () => {
               fontWeight={"bold"}
               color={"white"}
             >
-             Appointment
+              Appointment
             </Typography>
           </Grid>
           <Grid container justifyContent={"space-around"}>
-            <Grid container direction={"column"} >
-              <Grid  mt={2}>
+            <Grid container direction={"column"}>
+              <Grid mt={2}>
                 <TextField
                   fullWidth
                   color="secondary"
@@ -230,7 +227,7 @@ const Footer = () => {
                 />
               </Grid>
             </Grid>
-            <Grid container xs={12}  mt={2} >
+            <Grid container xs={12} mt={2}>
               <Grid container>
                 <TextField
                   fullWidth
@@ -269,7 +266,7 @@ const Footer = () => {
                   label="Description"
                 />
               </Grid>
-              <Grid container px={2} pt={2} justifyContent={'flex-end'}>
+              <Grid container px={2} pt={2} justifyContent={"flex-end"}>
                 <Button variant="contained" size="large" color="secondary">
                   Send
                 </Button>
